@@ -9,10 +9,10 @@ int isPal(int x){
         temp=temp/10;
     }
     if(rev==x){
-        cout<<"yes"<<endl;
+        cout<<"Yes the given number is Palindrome"<<endl;
     }
     else{
-        cout<<"No"<<endl;
+        cout<<"No the given number is not Palindrome"<<endl;
     }
 }
 int main()
