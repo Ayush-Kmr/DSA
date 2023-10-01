@@ -58,3 +58,5 @@ int main()
     cout << "Index of the " << key << " is " << index << endl;
     return 0;
 }
+
+// Complexity- Log(n);

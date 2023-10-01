@@ -20,6 +20,6 @@ int main()
     cout << "Enter the number";
     cin >> x;
     countZero(x);
-    cout << "Trailing zeros in given number " << x << " is " << countZero(x) << endl;
+    cout << "Number of zeros in given number " << x << " is " << countZero(x) << endl;
     return 0;
 }

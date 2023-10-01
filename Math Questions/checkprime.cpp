@@ -27,8 +27,6 @@ int main()
     return 0;
 }
 
-
-
 //     //  Using while loop to check the prime for which number the given number is prime.
 #include <bits/stdc++.h>
 using namespace std;
@@ -50,5 +48,37 @@ int main()
         }
         i = i + 1;
     }
+    return 0;
+}
+
+// Most efficient method
+#include <bits/stdc++.h>
+using namespace std;
+
+int checkprime(int x)
+{
+    if (x % 2 == 0 || x % 3 == 0)
+    {
+        cout << "Not Prime" << endl;
+        return 0;
+    }
+    // 6k+1  || 6k-1 positioning for prime number
+    for (int i = 6; i * i <= x; i += 6)
+    {
+        if (x % (i + 1) == 0 || x % (i - 1) == 0)
+        {
+            cout << "Not Prime" << endl;
+            return 0;
+        }
+    }
+    cout << "Prime " << endl;
+    return 1;
+}
+int main()
+{
+    int x;
+    cout << "Enter the number: ";
+    cin >> x;
+    checkprime(x);
     return 0;
 }
