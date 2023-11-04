@@ -1,25 +1,19 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-int countZero(int x)
+int main()
 {
-
-    int count = 0;
-    while (x > 0)
+    int arr[5] = {2, 2, 2, 3, 3};
+    int count = 1;
+    for (int i = 0; i < 5; i++)
     {
-        if (x % 10 == 0)
+        if (arr[i] == arr[i + 1])
         {
             count++;
         }
-        x = x / 10;
+        else
+        {
+            cout << arr[i - 1] << " " << count << endl;
+            count = 1;
+        }
     }
-    return count;
-}
-int main()
-{
-    int x;
-    cout << "Enter the number";
-    cin >> x;
-    countZero(x);
-    cout << "Trailing zeros in given number " << x << " is " << countZero(x) << endl;
-    return 0;
 }
