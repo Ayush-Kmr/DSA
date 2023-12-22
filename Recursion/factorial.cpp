@@ -1,9 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// This code is valid for the factorial number upto 13 only
 int factorial(int n)
 {
-    if (n == 1)
+    if (n == 1 || n == 0)
     {
         return 1;
     }
