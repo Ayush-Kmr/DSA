@@ -1,1 +1,1 @@
-    return ans;
+    // printarray(arr, n, index);

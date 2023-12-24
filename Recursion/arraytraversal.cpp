@@ -10,6 +10,26 @@ void printarray(int arr[], int n, int index)
     cout << arr[index] << " ";
     printarray(arr, n, index + 1);
 };
+
+void travArray(int arr[], int size)
+{
+    if (size == 0)
+    {
+        return;
+    }
+    cout << arr[0] << " ";
+    travArray(arr + 1, size - 1);
+};
+
+void rivPrint(int arr[], int index)
+{
+    if (index < 0)
+    {
+        return;
+    }
+    cout << arr[index] << " ";
+    rivPrint(arr, index - 1);
+};
 int main()
 {
     int n;
@@ -22,6 +42,8 @@ int main()
     {
         cin >> arr[i];
     }
-    printarray(arr, n, index);
+    // printarray(arr, n, index);
+    // rivPrint(arr, n - 1);
+    travArray(arr, n);
     return 0;
 }
