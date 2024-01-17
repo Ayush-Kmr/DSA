@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// this is for adding the positive integers
+
 void addstring(string x, string y, int carry, int i, int j, string &ans)
 {
     if (i < 0 && j < 0 && carry == 0)
