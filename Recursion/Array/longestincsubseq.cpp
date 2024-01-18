@@ -1,4 +1,4 @@
-// ======= Longest Increasing Subsequence =======
+// ======= Longest Trictly Increasing Subsequence =======
 
 #include <bits/stdc++.h>
 using namespace std;
