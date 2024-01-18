@@ -18,7 +18,7 @@ int partition(vector<int> &arr, int start, int end)
     int i = start, j = end;
     while (i <= pivotIndex && j >= pivotIndex)
     {
-        while (arr[i] < pivotvalue)
+        while (arr[i] <= pivotvalue)
         {
             i++;
         }
@@ -27,12 +27,12 @@ int partition(vector<int> &arr, int start, int end)
             j--;
         }
 
-        if (i <= pivotIndex && j >= pivotIndex)
+        if (i < pivotIndex && j > pivotIndex)
         {
             swap(arr[i], arr[j]);
         }
-        return pivotIndex;
     }
+    return pivotIndex;
 }
 
 void quicksort(vector<int> &arr, int start, int end)
