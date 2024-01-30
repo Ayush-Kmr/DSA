@@ -28,7 +28,7 @@ int main()
 {
 
     string x = "abcdefc";
-    string y = "acz";
+    string y = "acf";
     int i = 0;
     int j = 0;
     int ans = solve(x, y, i, j);
