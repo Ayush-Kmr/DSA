@@ -18,6 +18,8 @@ int fibonacci(int n, vector<int> &dp)
     {
         return 1;
     }
+
+    // Step 3
     if (dp[n] != -1)
     {
         return dp[n];

@@ -10,11 +10,13 @@ int solve(vector<int> &arr, int index, vector<int> &dp)
         return 0;
     }
     if (dp[index] != -1)
+    {
         return dp[index];
+    }
     int include = arr[index] + solve(arr, index + 2, dp);
-    int exclude = 0 + solve(arr, index + 1);
+    int exclude = 0 + solve(arr, index + 1, dp);
 
-    return dp[index] = max(include, exclude, dp);
+    return dp[index] = max(include, exclude);
 }
 
 int main()
