@@ -23,6 +23,29 @@ int solve(vector<int> val, vector<int> wt, int index, int capacity, vector<vecto
 
     return dp[index][capacity] = max(include, exclude);
 }
+
+// Bottom Up Approach
+int solveTab(vector<int> val, vector<int> wt, int n, int c)
+{
+    vector<vector<int>> dp(n + 1, vector<int>(c + 1, 0));
+    for (int index = n - 1; index >= 0; index--)
+    {
+        for (int capacity = 0; capacity <= c; capacity++)
+        {
+
+            int include = 0;
+
+            if (capacity >= wt[index])
+            {
+                include = val[index + 1] + dp[index + 1][capacity - wt[index]];
+            }
+            int exclude = 0 + dp[index + 1][capacity];
+
+            dp[index][capacity] = max(include, exclude);
+        }
+    }
+    return dp[0][c];
+}
 int main()
 {
     int n = 3;
@@ -39,7 +62,8 @@ int main()
     int capacity = 50;
 
     vector<vector<int>> dp(n + 1, vector<int>(capacity + 1, -1));
-    int ans = solve(val, wt, 0, capacity, dp);
+    // int ans = solve(val, wt, 0, capacity, dp);
+    int ans = solveTab(val, wt, n, capacity);
     cout << "Answer is " << ans << endl;
     return 0;
 }
