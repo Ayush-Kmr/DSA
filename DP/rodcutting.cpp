@@ -23,27 +23,27 @@ int solverecursive(int n, int a, int b, int c)
 }
 
 // Top Down Approach
-// int solvememDp(int n, int a, int b, int c, vector<int> &dp)
-// {
-//    // Base case
-//    if (n == 0)
-//    {
-//       return 0;
-//    }
-//    if (n < 0)
-//    {
-//       return INT_MIN;
-//    }
-//    if (dp[n] != -1)
-//    {
-//       return dp[n];
-//    }
-//    int first = solvememDp(n - a, a, b, c, dp);
-//    int second = solvememDp(n - b, a, b, c, dp);
-//    int third = solvememDp(n - c, a, b, c, dp);
+int solvememDp(int n, int a, int b, int c, vector<int> &dp)
+{
+   // Base case
+   if (n == 0)
+   {
+      return 0;
+   }
+   if (n < 0)
+   {
+      return INT_MIN;
+   }
+   if (dp[n] != -1)
+   {
+      return dp[n];
+   }
+   int first = solvememDp(n - a, a, b, c, dp);
+   int second = solvememDp(n - b, a, b, c, dp);
+   int third = solvememDp(n - c, a, b, c, dp);
 
-//    return dp[n] = 1 + max(first, max(second, third));
-// }
+   return dp[n] = 1 + max(first, max(second, third));
+}
 int main()
 {
    int rodsize = 17;

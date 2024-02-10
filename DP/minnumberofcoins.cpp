@@ -29,34 +29,34 @@ using namespace std;
 // }
 
 // Top down approach
-// int dpmincoin(int target, vector<int> &arr, vector<int> &dp)
-// {
-//     // Base Case
-//     if (target == 0)
-//     {
-//         return 0;
-//     }
-//     if (target < 0)
-//     {
-//         return INT_MAX;
-//     }
-//     int mini = INT_MAX;
-//     if (dp[target] != -1)
-//     {
-//         return dp[target];
-//     }
-//     for (int i = 0; i < arr.size(); i++)
-//     {
-//         int ans = dpmincoin(target - arr[i], arr, dp);
-//         // I am able to hit the target
-//         if (ans != INT_MAX)
-//         {
-//             mini = min(mini, 1 + ans);
-//         }
-//     }
+int dpmincoin(int target, vector<int> &arr, vector<int> &dp)
+{
+    // Base Case
+    if (target == 0)
+    {
+        return 0;
+    }
+    if (target < 0)
+    {
+        return INT_MAX;
+    }
+    int mini = INT_MAX;
+    if (dp[target] != -1)
+    {
+        return dp[target];
+    }
+    for (int i = 0; i < arr.size(); i++)
+    {
+        int ans = dpmincoin(target - arr[i], arr, dp);
+        // I am able to hit the target
+        if (ans != INT_MAX)
+        {
+            mini = min(mini, 1 + ans);
+        }
+    }
 
-//     return dp[target] = mini;
-// }
+    return dp[target] = mini;
+}
 
 // Bottom Up
 int budpmincoin(int t, vector<int> &arr)
