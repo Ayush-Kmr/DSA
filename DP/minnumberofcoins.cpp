@@ -3,30 +3,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// int mincoin(int target, vector<int> &arr)
-// {
-//     // Base Case
-//     if (target == 0)
-//     {
-//         return 0;
-//     }
-//     if (target < 0)
-//     {
-//         return INT_MAX;
-//     }
-//     int mini = INT_MAX;
-//     for (int i = 0; i < arr.size(); i++)
-//     {
-//         int ans = mincoin(target - arr[i], arr);
-//         // I am able to hit the target
-//         if (ans != INT_MAX)
-//         {
-//             mini = min(mini, 1 + ans);
-//         }
-//     }
+int mincoin(int targest, vector<int> &arr)
+{
+    // Base Case
+    if (target == 0)
+    {
+        return 0;
+    }
+    if (target < 0)
+    {
+        return INT_MAX;
+    }
+    int mini = INT_MAX;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        int ans = mincoin(target - arr[i], arr);
+        // I am able to hit the target
+        if (ans != INT_MAX)
+        {
+            mini = min(mini, 1 + ans);
+        }
+    }
 
-//     return mini;
-// }
+    return mini;
+}
 
 // Top down approach
 int dpmincoin(int target, vector<int> &arr, vector<int> &dp)
