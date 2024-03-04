@@ -47,8 +47,18 @@ int main()
    {
       cout << "Key founded" << endl;
       auto temp = s.find(key);
-      s.erase(10);
+      cout << "Key value is :" << (*temp) << endl;
+      s.erase(temp);
       cout << "Key erased successfully" << endl;
+   }
+
+   if (s.count(63))
+   {
+      cout << "Key Found" << endl;
+   }
+   else
+   {
+      cout << "Key Not Fount" << endl;
    }
 
    cout << "No. of elements: " << s.size() << endl;
